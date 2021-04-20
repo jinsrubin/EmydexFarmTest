@@ -112,6 +112,7 @@ namespace FarmSystem.Test1
         //Sheep has left the farm
         //Emydex Farm is now empty
         //********************************************************************************************************************/
+        
         private static void Excercise4()
         {
             //TODO : Apply OOP concepts and modify the code below to get the required output 
@@ -128,20 +129,18 @@ namespace FarmSystem.Test1
             Sheep sheep = new Sheep();
 
             farm.Enter();
-
-            farm.ReleaseAllAnimals(cow);
-            farm.ReleaseAllAnimals(hen);
-            farm.ReleaseAllAnimals(horse);
-            farm.ReleaseAllAnimals(sheep);
-
+           
             farm.ReleaseAnimals += c_ReleaseAnimals;
+            farm.ReleaseAllAnimals();
+            animals.Clear();
             Console.ReadKey();
         }
-
-        static void c_ReleaseAnimals(object sender, EventArgs e)
+        public static void c_ReleaseAnimals(object sender, EventArgs e)
         {
-            Console.WriteLine("Emydex Farm is now empty");
+            Console.WriteLine("Emydex farm is now empty");
         }
+
+
 
     }
 }
